@@ -1,0 +1,46 @@
+.service-sec.certifications {
+  padding: 35px 0 28px 0;
+  background: #FFF1E8;
+}
+.service-sec.certifications .service-wrapper {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.service-sec.certifications .service-wrapper .service-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.service-sec.certifications .service-wrapper .service-card .service-title {
+  color: #000000;
+}
+.service-sec.certifications .service-wrapper .gradient-border-box {
+  position: relative;
+  width: 26px;
+  background: radial-gradient(circle, rgba(69, 69, 69, 0.02) 10%, rgba(171, 171, 171, 0) 100%);
+  opacity: 0.7;
+}
+.service-sec.certifications .service-wrapper .gradient-border-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(to top, rgba(255, 190, 150, 0), #FFBF96, rgba(255, 191, 150, 0));
+}
+
+/* Media Query */
+@media (max-width: 992px) {
+  .service-sec.certifications .service-wrapper .gradient-border-box {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .service-sec.certifications .service-wrapper .service-card {
+    flex-direction: column;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=certificationns-service-sec.css.map */

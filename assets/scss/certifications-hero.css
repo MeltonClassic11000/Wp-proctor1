@@ -1,0 +1,43 @@
+.hero-sec.certifications {
+  padding: 152px 0 90px 0;
+  position: relative;
+  z-index: 1;
+}
+.hero-sec.certifications .obj-wrapper {
+  max-width: 1336px;
+  inset: 0;
+  height: 255px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  margin-top: 10px;
+  position: absolute;
+  z-index: -1;
+}
+.hero-sec.certifications .obj-wrapper .obj {
+  position: absolute;
+  padding: 0 15px;
+}
+.hero-sec.certifications .obj-wrapper .obj.obj-1 {
+  left: 0;
+  top: 0;
+}
+.hero-sec.certifications .obj-wrapper .obj.obj-2 {
+  left: 0;
+  bottom: 0;
+}
+.hero-sec.certifications .obj-wrapper .obj.obj-3 {
+  right: 0;
+  top: 0;
+}
+.hero-sec.certifications .obj-wrapper .obj.obj-4 {
+  right: 0;
+  bottom: 0;
+}
+
+/* Media Query */
+@media (max-width: 576px) {
+  .hero-sec .obj-wrapper {
+    display: none;
+  }
+}/*# sourceMappingURL=certifications-hero.css.map */

@@ -1,0 +1,29 @@
+.hero-sec {
+  padding: 0;
+  position: relative;
+  background-color: var(--cream-light);
+}
+.hero-sec .main-wrapper {
+  position: relative;
+}
+.hero-sec .main-wrapper .content-wrapper {
+  padding: 60px 0;
+}
+.hero-sec .main-wrapper .hero-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* Media Query */
+@media (max-width: 1200px) {
+  .hero-sec {
+    padding: 60px 0;
+  }
+  .hero-sec .main-wrapper .content-wrapper {
+    padding: 0;
+  }
+  .hero-sec .main-wrapper .hero-img {
+    position: static;
+  }
+}/*# sourceMappingURL=about-hero.css.map */

@@ -1,0 +1,700 @@
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package proctor-theme
+ */
+
+get_header();
+?>
+
+<!-- Sections -->
+
+	<section class="hero-sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-7">
+					<div class="content-wrapper">
+						<a href="#" class="secondary-btn pt-1 pb-1 mb-3">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/shield-icon.webp"
+								width="25" height="28" alt="Icon" loading="lazy">
+							Proctored Exams Made Easy
+						</a>
+						<h1 class="mb-4">Pass Online Proctored Exams Stress-Free</h1>
+						<p class="fw-md fs-18 mb-4">We specialize in helping pass online proctored exams
+							confidently.</p>
+						<ul class="list-with-icon s2 mb-4">
+							<li class="mb-3"><strong>Private & Confidential</strong> — Your Identity Is Always Safe
+							</li>
+							<li class="mb-3"><strong>All Platforms Covered</strong> — Prometric, Examity, ProctorU &
+								More</li>
+							<li class="mb-0"><strong>99.99% On-Time Exam Assistance</strong> — Never Miss a Session
+							</li>
+						</ul>
+						<div class="d-flex align-items-center flex-wrap gap-2 mb-4">
+							<div class="form-wrapper">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/hero-form-message.webp"
+									width="18" height="15" alt="icon">
+								<input type="email" placeholder="Enter Your Email...">
+							</div>
+							<a href="#" class="btn btn-primary">
+								Get Started Now
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/arrow-right.webp"
+									style="object-fit: contain;" width="17" height="17" alt="Icon" loading="lazy">
+							</a>
+						</div>
+						<ul class="list-with-icon d-flex align-items-center gap-4 flex-wrap s3">
+							<li>Zero AI Involvement</li>
+							<li>Only Human Experts</li>
+							<li>Full Privacy Protection</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xl-5">
+					<div class="obj-wrapper">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-img.webp"
+							style="max-width: 458px;" class="img-fluid" width="458" height="545" alt="Hero Image">
+						<div class="buttons">
+							<div class="secondary-btn"><img
+									src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/suppoert-icon.webp"
+									width="27" height="27" alt="Icon"> 24/7 Live Support</div>
+							<div class="secondary-btn"><img
+									src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/suppoert-icon.webp"
+									width="27" height="27" alt="Icon"> Zero AI Involvement</div>
+							<div class="secondary-btn"><img
+									src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/suppoert-icon.webp"
+									width="27" height="27" alt="Icon"> Full Privacy Protection</div>
+							<div class="secondary-btn"><img
+									src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/suppoert-icon.webp"
+									width="27" height="27" alt="Icon"> Guaranteed Results</div>
+						</div>
+						<div class="card custom-border">
+							<div class="d-flex align-items-center gap-2 mb-3">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/mix-images.webp"
+									width="129" height="48" alt="Section Image">
+								<div class="title fw-semibold">16.7k+ Successful Students</div>
+							</div>
+							<p class="mb-0 fs-12">
+								We specialize in helping students & professionals pass their online proctored exams
+								safely
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="infinite-slider-sec">
+		<div class="container">
+			<div
+				class="content-wrapper d-flex align-items-center justify-content-xl-between justify-content-center text-lg-start text-center gap-3 flex-wrap mb-5">
+				<h2 class="mb-0">Proctor Exams We Help With</h2>
+				<a href="#" class="secondary-btn"><img
+						src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/shield-icon.webp" width="25"
+						height="28" alt="Icon" loading="lazy"> Privacy is Power</a>
+			</div>
+		</div>
+		<div class="logo-slider-wrapper">
+			<div class="logo-slider top-slider">
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon1.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon2.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon3.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon4.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon5.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon6.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon7.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon8.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon9.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+			</div>
+		</div>
+		<div class="logo-slider-wrapper">
+			<div class="logo-slider bottom-slider">
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon9.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon8.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon7.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon6.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon5.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon4.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon3.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon2.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+				<div class="slide">
+					<div class="icon-wrapper mb-3"><img
+							src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/infinite-scroll/infinite-scroll-icon1.webp"
+							alt="Icon" loading="lazy"></div>
+					<span class="d-block text-center fw-exbold fs-22">PMI Exam</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="how-it-works pb-0">
+		<div class="container">
+			<h2 class="text-center">How It Works</h2>
+			<div class="row g-4">
+				<div class="col-md-6 col-lg-4">
+					<div class="card-borderd">
+						<div class="counter-wrapper">
+							<div class="counter">
+								<span class="counter-title">Step</span>
+								<span class="count">01</span>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-img-wrapper">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/step-icon1.webp"
+									width="120" height="124" alt="Icon" loading="lazy">
+							</div>
+							<div class="content-wrapper">
+								<span class="card-title">Share Exam Details</span>
+								<p class="card-text">Tell us your exam name, platform, and preferred date/time.
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+									Ipsum has been standard.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card-borderd">
+						<div class="counter-wrapper">
+							<div class="counter">
+								<span class="counter-title">Step</span>
+								<span class="count">02</span>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-img-wrapper">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/step-icon2.webp"
+									width="120" height="124" alt="Icon" loading="lazy">
+							</div>
+							<div class="content-wrapper">
+								<span class="card-title">Match With Expert</span>
+								<p class="card-text">We assign a certified human professional with deep knowledge of
+									your subject and testing platform. Ipsum is simply dummy text of the printing
+									and typesetting industry Ipsum has been standard.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card-borderd">
+						<div class="counter-wrapper">
+							<div class="counter">
+								<span class="counter-title">Step</span>
+								<span class="count">03</span>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-img-wrapper">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/step-icon3.webp"
+									width="120" height="124" alt="Icon" loading="lazy">
+							</div>
+							<div class="content-wrapper">
+								<span class="card-title">Share Exam Details</span>
+								<p class="card-text">Tell us your exam name, platform, and preferred date/time.
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+									Ipsum has been standard.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="reviews-sec">
+		<div class="container">
+			<div
+				class="content-wrapper d-flex align-items-center justify-content-xl-between justify-content-xlnter text-lg-start text-center gap-3 flex-wrap mb-5">
+				<h2 style="max-width: 420px;" class="mb-0">What Students Thought About Us</h2>
+				<p style="max-width: 628px;" class="fs-20 mb-0">These are the honest opinions of learners who came
+					to us asking, “Can I pay someone to take my online exam?” Lorem Ipsum has been the industry's
+					standard dummy text ever since the 1500s.</p>
+			</div>
+			<div class="row g-3 mb-5">
+				<div class="col-md-6 col-lg-4">
+					<div class="card-borderd s1">
+						<div class="counter-wrapper">
+							<div class="counter">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonial-img1.webp"
+									width="115" height="115" alt="Testimonial Image" loading="lazy">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-img-wrapper">
+								<div class="client-content">
+									<div class="client-name">- Matthews Spencer</div>
+									<div class="client-info">Economics - Dissertation: 27 Pages,</div>
+									<div class="reviews-icon">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+									</div>
+								</div>
+							</div>
+							<div class="content-wrapper">
+								<span class="card-title s1">Lorem Ipsum is simply dummy....</span>
+								<p class="card-text">Standard dummy text ever since the 1500s, when an unknown
+									printer took a galley of type and scrambled it to make a type specimen book. It
+									has survived not only five centuries, but also the leap into electronic
+									typesetting.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card-borderd s1">
+						<div class="counter-wrapper">
+							<div class="counter">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonial-img2.webp"
+									width="115" height="115" alt="Testimonial Image" loading="lazy">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-img-wrapper">
+								<div class="client-content">
+									<div class="client-name">- Matthews Spencer</div>
+									<div class="client-info">Economics - Dissertation: 27 Pages,</div>
+									<div class="reviews-icon">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+									</div>
+								</div>
+							</div>
+							<div class="content-wrapper">
+								<span class="card-title s1">Lorem Ipsum is simply dummy....</span>
+								<p class="card-text">Standard dummy text ever since the 1500s, when an unknown
+									printer took a galley of type and scrambled it to make a type specimen book. It
+									has survived not only five centuries, but also the leap into electronic
+									typesetting.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card-borderd s1">
+						<div class="counter-wrapper">
+							<div class="counter">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonial-img3.webp"
+									width="115" height="115" alt="Testimonial Image" loading="lazy">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-img-wrapper">
+								<div class="client-content">
+									<div class="client-name">- Matthews Spencer</div>
+									<div class="client-info">Economics - Dissertation: 27 Pages,</div>
+									<div class="reviews-icon">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+									</div>
+								</div>
+							</div>
+							<div class="content-wrapper">
+								<span class="card-title s1">Lorem Ipsum is simply dummy....</span>
+								<p class="card-text">Standard dummy text ever since the 1500s, when an unknown
+									printer took a galley of type and scrambled it to make a type specimen book. It
+									has survived not only five centuries, but also the leap into electronic
+									typesetting.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card-borderd s1">
+						<div class="counter-wrapper">
+							<div class="counter">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonial-img3.webp"
+									width="115" height="115" alt="Testimonial Image" loading="lazy">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-img-wrapper">
+								<div class="client-content">
+									<div class="client-name">- Matthews Spencer</div>
+									<div class="client-info">Economics - Dissertation: 27 Pages,</div>
+									<div class="reviews-icon">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+									</div>
+								</div>
+							</div>
+							<div class="content-wrapper">
+								<span class="card-title s1">Lorem Ipsum is simply dummy....</span>
+								<p class="card-text">Standard dummy text ever since the 1500s, when an unknown
+									printer took a galley of type and scrambled it to make a type specimen book. It
+									has survived not only five centuries, but also the leap into electronic
+									typesetting.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card-borderd s1">
+						<div class="counter-wrapper">
+							<div class="counter">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonial-img4.webp"
+									width="115" height="115" alt="Testimonial Image" loading="lazy">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-img-wrapper">
+								<div class="client-content">
+									<div class="client-name">- Matthews Spencer</div>
+									<div class="client-info">Economics - Dissertation: 27 Pages,</div>
+									<div class="reviews-icon">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+									</div>
+								</div>
+							</div>
+							<div class="content-wrapper">
+								<span class="card-title s1">Lorem Ipsum is simply dummy....</span>
+								<p class="card-text">Standard dummy text ever since the 1500s, when an unknown
+									printer took a galley of type and scrambled it to make a type specimen book. It
+									has survived not only five centuries, but also the leap into electronic
+									typesetting.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card-borderd s1">
+						<div class="counter-wrapper">
+							<div class="counter">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonial-img2.webp"
+									width="115" height="115" alt="Testimonial Image" loading="lazy">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-img-wrapper">
+								<div class="client-content">
+									<div class="client-name">- Matthews Spencer</div>
+									<div class="client-info">Economics - Dissertation: 27 Pages,</div>
+									<div class="reviews-icon">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/review-icon.webp"
+											width="20" height="20" alt="Icon" loading="lazy">
+									</div>
+								</div>
+							</div>
+							<div class="content-wrapper">
+								<span class="card-title s1">Lorem Ipsum is simply dummy....</span>
+								<p class="card-text">Standard dummy text ever since the 1500s, when an unknown
+									printer took a galley of type and scrambled it to make a type specimen book. It
+									has survived not only five centuries, but also the leap into electronic
+									typesetting.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="btn btn-primary mx-auto">All Testimonials</a>
+		</div>
+	</section>
+	<div class="half-sections">
+		<div class="custom-container">
+			<div class="sec-wrapper">
+				<section class="half-sec p-0">
+					<div class="row g-4">
+						<div class="col-xl-5">
+							<div class="image-wrapper mx-auto">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home-half-sec-img1.webp"
+									style="max-width: 549px;" class="border-12 object-cover w-100 h-100 d-block mx-auto"
+									width="549" height="579" alt="Section Image" loading="lazy">
+								<div class="content-wrapper">
+									<div class="content text-center bg-white">
+										<span class="title">100% Safe Payment</span>
+										<p class="mb-0 fs-14">Contact Us Right Now!</p>
+									</div>
+									<a href="#" class="btn btn-primary d-block mx-auto">Get Started</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-7">
+							<h2 class="s1 mb-4">Professionals Who Know Every Platform & Rule</h2>
+							<p class="mb-3 fs-18"><strong>Whether it’s CompTIA, AWS, Cisco, Microsoft, or ITIL, our
+									exam professionals know every testing platform and rule.</strong> Helping
+								students and professionals pass their OnVUE, Pearson, Prometric, Examity, ProctorU,
+								and other online proctored exams safely and confidently. Exams like the SAT, GRE, or
+								GMAT are essential for college admissions.</p>
+							<p class="mb-4 fs-20"><strong>We ensure smooth proctor handling, secure remote access, &
+									genuine results.</strong></p>
+							<div class="card-wrapper">
+								<div class="card custom-border">
+									<ul class="list-with-icon mb-3">
+										<li class="s1">Private & Confidential</li>
+									</ul>
+									<p class="mb-0">
+										Helping students and professionals pass their OnVUE, Pearson,
+										Prometric, Examity, ProctorU, and other online proctored exams
+										safely.
+									</p>
+								</div>
+								<div class="card custom-border">
+									<ul class="list-with-icon mb-3">
+										<li class="s1">Private & Confidential</li>
+									</ul>
+									<p class="mb-0">
+										Helping students and professionals pass their OnVUE, Pearson,
+										Prometric, Examity, ProctorU, and other online proctored exams
+										safely.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="half-sec p-0">
+					<div class="row g-4">
+						<div class="col-xl-5 order-xl-2">
+							<div class="image-wrapper mx-auto">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home-half-sec-img2.webp"
+									class="border-12 object-cover w-100 h-100" width="549" height="579"
+									alt="Section Image" loading="lazy">
+								<div class="custom-buttons">
+									<div href="#" class="custom-secondary-btn btn1">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/check-icon1-white.webp"
+											width="19" height="17" alt="Icon" loading="lazy"> Human Experts
+									</div>
+									<div href="#" class="custom-secondary-btn btn2">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/check-icon1-white.webp"
+											width="19" height="17" alt="Icon" loading="lazy"> Zero AI Involvement
+									</div>
+									<div href="#" class="custom-secondary-btn btn3">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/check-icon1-white.webp"
+											width="19" height="17" alt="Icon" loading="lazy"> Pay After You Pass
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-7 order-xl-1">
+							<h2 class="s1 mb-4">Help with Online Exam Under Various Names: You Name It, We Can Do
+								It!</h2>
+							<ul class="list-with-icon s1">
+								<li class="mb-4">
+									<span class="fs-20 poppins-semibold d-block mb-2">Quizzes:</span>
+									<p class="mb-0">Short assessments that help evaluate your understanding of
+										specific topics. If you need assistance, you can trust us to order to take
+										my quiz for me and handle it.</p>
+								</li>
+								<li class="mb-4">
+									<span class="fs-20 poppins-semibold d-block mb-2">Tests:</span>
+									<p class="mb-0">Short assessments that help evaluate your understanding of
+										specific topics.</p>
+								</li>
+								<li class="mb-4">
+									<span class="fs-20 poppins-semibold d-block mb-2">Job Assessments:</span>
+									<p class="mb-0">Employer-led evaluations to assess candidates' skills. If you're
+										looking for assistance, our test takers can help you with them as well.</p>
+								</li>
+								<li class="mb-5">
+									<span class="fs-20 poppins-semibold d-block mb-2">Entrance Exams:</span>
+									<p class="mb-0">Exams like the SAT, GRE, or GMAT are essential for college
+										admissions. Need help with entrance exams? We’re here to pay someone to take
+										my online exam and make sure you perform well.</p>
+								</li>
+								<a href="#" class="btn btn-primary">Talk to An Expert</a>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<section class="faq-sec">
+		<div class="container">
+			<h2 class="s1 text-center mb-5">Frequently Asked Questions</h2>
+			<div class="row g-4">
+				<div class="col-lg-6">
+					<div class="faq-wrapper">
+						<div class="faq-item active">
+							<div class="faq-question">
+								1. What is Exams4U?
+								<span class="faq-icon">-</span>
+							</div>
+							<div class="faq-answer">Exams4U is an online learning platform...</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								2. How do I register?
+								<span class="faq-icon">+</span>
+							</div>
+							<div class="faq-answer">You can register by clicking the sign up button...</div>
+						</div>
+						<div class="faq-item mb-0">
+							<div class="faq-question">
+								3. Do you provide certifications?
+								<span class="faq-icon">+</span>
+							</div>
+							<div class="faq-answer">Yes, we provide certifications after completing courses...</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="faq-wrapper">
+						<div class="faq-item">
+							<div class="faq-question">
+								4. What is Exams4U?
+								<span class="faq-icon">-</span>
+							</div>
+							<div class="faq-answer">Exams4U is an online learning platform...</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								5. How do I register?
+								<span class="faq-icon">+</span>
+							</div>
+							<div class="faq-answer">You can register by clicking the sign up button...</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								6. Do you provide certifications?
+								<span class="faq-icon">+</span>
+							</div>
+							<div class="faq-answer">Yes, we provide certifications after completing courses...</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+<?php
+get_footer();

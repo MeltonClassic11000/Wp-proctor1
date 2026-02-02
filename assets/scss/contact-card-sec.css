@@ -1,0 +1,97 @@
+.contact-card-sec .contact-card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.contact-card-sec .contact-card-wrapper .contact-card {
+  border: 1px solid rgba(0, 0, 0, 0.0705882353);
+  padding: clamp(20px, 3.5vw, 35px);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 358px;
+  position: relative;
+  padding-top: 117px;
+  transition: all 0.3s ease;
+  z-index: 0;
+  cursor: pointer;
+}
+.contact-card-sec .contact-card-wrapper .contact-card:hover {
+  background-color: white;
+  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.062745098);
+  border-color: transparent;
+}
+.contact-card-sec .contact-card-wrapper .contact-card:hover .icon-wrapper .icon {
+  background-color: var(--primary);
+}
+.contact-card-sec .contact-card-wrapper .contact-card:hover .icon-wrapper img {
+  filter: brightness(0) invert(1);
+}
+.contact-card-sec .contact-card-wrapper .contact-card .icon-wrapper {
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 103px;
+  height: 93px;
+  border: 1px solid rgba(0, 0, 0, 0.0705882353);
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+}
+.contact-card-sec .contact-card-wrapper .contact-card .icon-wrapper .icon {
+  width: 83px;
+  height: 83px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.0705882353);
+  background-color: rgba(250, 242, 237, 0.0196078431);
+  transition: all 0.3s ease;
+}
+.contact-card-sec .contact-card-wrapper .contact-card .icon-wrapper .icon img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: all 0.3s ease;
+}
+.contact-card-sec .contact-card-wrapper .contact-card .card-content {
+  text-align: center;
+}
+.contact-card-sec .contact-card-wrapper .contact-card .card-content .card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(22px, 2.6vw, 26px);
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #000000;
+}
+.contact-card-sec .contact-card-wrapper .contact-card .card-content .card-info {
+  color: #000000;
+  font-size: clamp(22px, 2.6vw, 26px);
+  font-weight: 300;
+}
+
+@media (max-width: 1200px) {
+  .contact-card-sec .contact-card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact-card-sec .contact-card-wrapper .contact-card {
+    max-width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .contact-card-sec .contact-card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .contact-card-sec .contact-card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=contact-card-sec.css.map */
