@@ -23,91 +23,94 @@ $theme_url = get_stylesheet_directory_uri();
 		<?php if (get_row_layout() == 'home_hero_section'): ?>
 			<link rel="stylesheet" id="hero-css" href="<?= $theme_url ?>/assets/scss/home-hero.css" type="text/css">
 			<section class="hero-sec">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-7">
-							<div class="content-wrapper">
-								<?php if (get_sub_field('section_badge')): ?>
-									<div class="secondary-btn text-primary mb-3">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/shield-icon.webp"
-											width="25" height="28" alt="Icon" loading="lazy">
-										<?php the_sub_field('section_badge'); ?>
-									</div>
-								<?php endif; ?>
-
-								<?php if (get_sub_field('section_title')): ?>
-									<h1 class="mb-4"><?php the_sub_field('section_title'); ?></h1>
-								<?php endif; ?>
-
-								<?php if (get_sub_field('text_content')): ?>
-									<div class="fw-md fs-18 mb-4 content"><?php the_sub_field('text_content'); ?></div>
-								<?php endif; ?>
-
-								<?php if (have_rows('icon_list')): ?>
-									<ul class="list-with-icon d-flex align-items-center gap-4 flex-wrap s3">
-										<?php while (have_rows('icon_list')):
-											the_row(); ?>
-											<li class="mb-3"><?php the_sub_field('item_text'); ?></li>
-										<?php endwhile; ?>
-									</ul>
-								<?php endif; ?>
-
-								<?php if (get_sub_field('contact_form')): ?>
-									<div class="d-flex align-items-center flex-wrap gap-2 mb-4">
-										<?php the_sub_field('contact_form'); ?>
-									</div>
-								<?php endif; ?>
-
-								<?php if (have_rows('trust_points')): ?>
-									<ul class="list-with-icon d-flex align-items-center gap-4 flex-wrap s3">
-										<?php while (have_rows('trust_points')):
-											the_row(); ?>
-											<li><?php the_sub_field('point_text'); ?></li>
-										<?php endwhile; ?>
-									</ul>
-								<?php endif; ?>
-
-							</div>
-						</div>
-
-						<div class="col-xl-5">
-							<div class="obj-wrapper">
-								<?php $hero_image = get_sub_field('hero_image'); ?>
-								<?php if ($hero_image): ?>
-									<img src="<?php echo esc_url($hero_image['url']); ?>"
-										alt="<?php echo esc_attr($hero_image['alt']); ?>" style="max-width: 458px;" class="img-fluid"
-										width="458" height="545">
-								<?php endif; ?>
-								<?php if (have_rows('section_badge_r1')): ?>
-									<div class="buttons">
-										<?php while (have_rows('section_badge_r1')):
-											the_row(); ?>
-											<div class="secondary-btn">
-												<?php $icon = get_sub_field('icon'); ?>
-												<?php if ($icon): ?>
-													<img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>"
-														width="27" height="27">
-												<?php endif; ?>
-												<?php the_sub_field('title'); ?>
-											</div>
-										<?php endwhile; ?>
-									</div>
-								<?php endif; ?>
-								<div class="card custom-border">
-									<div class="d-flex align-items-center gap-2 mb-3">
-										<?php $card_image = get_sub_field('card_image'); ?>
-										<?php if ($card_image): ?>
-											<img src="<?php echo esc_url($card_image['url']); ?>"
-												alt="<?php echo esc_attr($card_image['alt']); ?>" width="129" height="48">
-										<?php endif; ?>
-
-										<div class="title fw-semibold">
-											<?php the_sub_field('card_title'); ?>
+				<div class="hero-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-7">
+								<div style="max-width: 650px;" class="content-wrapper">
+									<?php if (get_sub_field('section_badge')): ?>
+										<div class="secondary-btn text-primary mb-3">
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/shield-icon.webp"
+												width="25" height="28" alt="Icon" loading="lazy">
+											<?php the_sub_field('section_badge'); ?>
 										</div>
+									<?php endif; ?>
+
+									<?php if (get_sub_field('section_title')): ?>
+										<h1 class="mb-4"><?php the_sub_field('section_title'); ?></h1>
+									<?php endif; ?>
+
+									<?php if (get_sub_field('text_content')): ?>
+										<div class="fw-md fs-18 mb-4 content"><?php the_sub_field('text_content'); ?></div>
+									<?php endif; ?>
+
+									<?php
+									if ($form = get_sub_field('contact_form')) {
+										echo do_shortcode($form);
+									}
+									?>
+
+									<?php if (have_rows('icon_list')): ?>
+										<ul style="margin-top: 30px;"
+											class="list-with-icon d-flex align-items-center gap-4 flex-wrap s3">
+											<?php while (have_rows('icon_list')):
+												the_row(); ?>
+												<li><?php the_sub_field('item_text'); ?></li>
+											<?php endwhile; ?>
+										</ul>
+									<?php endif; ?>
+
+									<?php if (have_rows('trust_points')): ?>
+										<ul class="list-with-icon d-flex align-items-center gap-4 flex-wrap s3">
+											<?php while (have_rows('trust_points')):
+												the_row(); ?>
+												<li><?php the_sub_field('point_text'); ?></li>
+											<?php endwhile; ?>
+										</ul>
+									<?php endif; ?>
+
+								</div>
+							</div>
+
+							<div class="col-xl-5">
+								<div class="obj-wrapper">
+									<?php $hero_image = get_sub_field('hero_image'); ?>
+									<?php if ($hero_image): ?>
+										<img src="<?php echo esc_url($hero_image['url']); ?>"
+											alt="<?php echo esc_attr($hero_image['alt']); ?>" style="max-width: 458px;"
+											class="img-fluid" width="458" height="545">
+									<?php endif; ?>
+									<?php if (have_rows('section_badge_r1')): ?>
+										<div class="buttons">
+											<?php while (have_rows('section_badge_r1')):
+												the_row(); ?>
+												<div class="secondary-btn">
+													<?php $icon = get_sub_field('icon'); ?>
+													<?php if ($icon): ?>
+														<img src="<?php echo esc_url($icon['url']); ?>"
+															alt="<?php echo esc_attr($icon['alt']); ?>" width="27" height="27">
+													<?php endif; ?>
+													<?php the_sub_field('title'); ?>
+												</div>
+											<?php endwhile; ?>
+										</div>
+									<?php endif; ?>
+									<div class="card custom-border">
+										<div class="d-flex align-items-center gap-2 mb-3">
+											<?php $card_image = get_sub_field('card_image'); ?>
+											<?php if ($card_image): ?>
+												<img src="<?php echo esc_url($card_image['url']); ?>"
+													alt="<?php echo esc_attr($card_image['alt']); ?>" width="129" height="48">
+											<?php endif; ?>
+
+											<div class="title fw-semibold">
+												<?php the_sub_field('card_title'); ?>
+											</div>
+										</div>
+										<p class="mb-0 fs-12">
+											<?php the_sub_field('card_description'); ?>
+										</p>
 									</div>
-									<p class="mb-0 fs-12">
-										<?php the_sub_field('card_description'); ?>
-									</p>
 								</div>
 							</div>
 						</div>
@@ -231,7 +234,8 @@ $theme_url = get_stylesheet_directory_uri();
 		<?php elseif (get_row_layout() == 'why_choose_us'): ?>
 			<section class="why-choose-us-sec bg-white pb-0">
 				<div class="container">
-					<div class="content-wrapper d-flex justify-content-xl-between text-lg-start text-center gap-3 flex-wrap mb-5">
+					<div
+						class="content-wrapper d-flex justify-content-xl-between justify-content-center align-items-center text-lg-start text-center gap-3 flex-wrap mb-5">
 						<h2 style="max-width:420px;" class="mb-0">
 							<?php the_sub_field('main_title'); ?>
 						</h2>
@@ -484,16 +488,17 @@ $theme_url = get_stylesheet_directory_uri();
 
 									<?php $button = get_sub_field('button'); ?>
 									<?php if ($button): ?>
-										<a href="<?php echo esc_url($button['url']); ?>"
-											target="<?php echo esc_attr($button['target']); ?>" class="btn btn-primary">
+										<a href="javascript:void(0)" class="see-more-btn btn btn-primary">
 											<?php echo esc_html($button['title']); ?>
 										</a>
 									<?php endif; ?>
 
+									<div class="see-more-content" style="display:none;">
+										<?php the_sub_field('see_more_content'); ?>
+									</div>
 								</div>
 							</div>
 						</section>
-
 					</div>
 				</div>
 			</div>

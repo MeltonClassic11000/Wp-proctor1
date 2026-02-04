@@ -96,6 +96,9 @@
   padding: 16px 20px;
   border: 2px solid #000000;
 }
+.half-sec .see-more-content {
+  padding-top: 24px;
+}
 
 /* media query */
 @media (min-width: 768px) {

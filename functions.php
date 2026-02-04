@@ -18,6 +18,16 @@ function theme_assets()
   wp_enqueue_style('header', get_template_directory_uri() . '/assets/scss/header.css');
   wp_enqueue_style('footer', get_template_directory_uri() . '/assets/scss/footer.css');
 
+  // ✅ BLOG PAGE CSS (ONLY)
+  if (is_page_template('blog.php')) {
+    wp_enqueue_style(
+      'blog-css',
+      get_template_directory_uri() . '/assets/scss/blog.css',
+      [],
+      '1.0'
+    );
+  }
+
 
   wp_enqueue_style('section-half', get_template_directory_uri() . '/assets/scss/half-sections.css', [], '1.0');
 

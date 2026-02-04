@@ -8,11 +8,13 @@
 
 body {
   background-color: #FFFAF6;
+  font-size: clamp(14px, 1.6vw, 16px);
 }
 
 p {
   margin-bottom: 1rem;
   line-height: 1.5;
+  font-size: clamp(14px, 1.6vw, 16px);
 }
 
 a {
@@ -25,6 +27,7 @@ li {
   padding: 0;
   margin: 0;
   list-style: none;
+  font-size: clamp(14px, 1.6vw, 16px);
 }
 
 /* Custom Card */
@@ -36,7 +39,7 @@ li {
 }
 .card-borderd.s1 .counter-wrapper .counter {
   width: 115px;
-  height: 115px;
+  height: 110px;
   padding: 0;
   background-color: transparent;
   box-shadow: none;
@@ -217,7 +220,7 @@ li {
   padding: 17px;
 }
 .card-borderd .card-body .content-wrapper .card-title {
-  font-size: 22px;
+  font-size: clamp(18px, 2.2vw, 22px);
   font-weight: 800;
   margin-bottom: 8px;
   display: block;
@@ -473,24 +476,22 @@ h6,
 
 h1,
 .h1 {
-  font-size: clamp(36px, 5.2vw, 52px);
+  font-size: clamp(28px, 5.2vw, 52px);
 }
 
 h2,
 .h2 {
-  font-size: clamp(28px, 4.4vw, 44px);
+  font-size: clamp(26px, 4.4vw, 44px);
 }
 
 h2.s1,
 .h2.s1 {
-  font-size: clamp(30px, 5.2vw, 48px);
-  font-weight: 600;
+  font-size: clamp(26px, 5.2vw, 44px);
 }
 
 h2.h3,
 .h2.h3 {
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 600;
+  font-size: clamp(26px, 4vw, 44px);
 }
 
 .fs-12 {
@@ -502,11 +503,11 @@ h2.h3,
 }
 
 .fs-18 {
-  font-size: 18px;
+  font-size: clamp(16px, 1.8vw, 18px);
 }
 
 .fs-20 {
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
 }
 
 .fs-22 {
@@ -531,12 +532,12 @@ h2.h3,
 
 /* list with icon */
 .list-with-icon.s1 li {
-  padding-left: 64px;
+  padding-left: clamp(54px, 6.4vw, 64px);
 }
 .list-with-icon.s1 li::before {
   content: "";
-  width: 46px;
-  height: 46px;
+  width: clamp(36px, 4.6vw, 46px);
+  height: clamp(36px, 4.6vw, 46px);
 }
 .list-with-icon.s1.vx li {
   padding-left: 34px;
@@ -619,6 +620,7 @@ section {
   align-items: center;
   width: 58px;
   height: 58px;
+  font-size: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -655,7 +657,37 @@ section {
   color: #1f1b18;
 }
 
-.form-wrapper {
+.form-step {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.form-step .form-wrapper.s1 p::before {
+  background: url("./../img/icon/user-icon.webp") center/contain no-repeat !important;
+  height: 18px;
+}
+.form-step .form-wrapper.s3 p::before {
+  background: url("./../img/icon/phone-icon.webp") center/contain no-repeat !important;
+  height: 18px;
+}
+.form-step p {
+  margin-bottom: 0;
+  position: relative;
+}
+.form-step p .btn {
+  border: none !important;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 17px 20px;
+  justify-content: center;
+  min-width: 200px;
+  width: 100%;
+}
+.form-step .form-wrapper {
+  width: 100%;
+}
+.form-step .form-wrapper p {
   background-color: #ffffff;
   border-radius: 40px;
   border: 1px solid rgba(0, 0, 0, 0.1254901961);
@@ -665,17 +697,43 @@ section {
   gap: 10px;
   width: 100%;
   max-width: 438px;
+  margin-bottom: 0;
+  position: relative;
+  padding-left: 46px;
 }
-.form-wrapper input {
+.form-step .form-wrapper p::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 15px;
+  background: url("./../img/icon/envelop-icon.webp") center/contain no-repeat;
+}
+.form-step .form-wrapper input {
   border: none;
   outline: none;
   color: #515151;
+  font-size: 17px;
+  transition: all 0.3s ease;
 }
-.form-wrapper input::-moz-placeholder {
+.form-step .form-wrapper input::-moz-placeholder {
   color: #515151;
+  font-size: 17px;
 }
-.form-wrapper input::placeholder {
+.form-step .form-wrapper input::placeholder {
   color: #515151;
+  font-size: 17px;
+}
+.form-step .form-wrapper .wpcf7-not-valid-tip {
+  position: absolute;
+  bottom: -44px;
+}
+.form-step .wpcf7-spinner {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
 }
 
 .form .input-wrapper {
@@ -857,7 +915,7 @@ section {
 }
 
 .mb-4 {
-  margin-bottom: 24px;
+  margin-bottom: clamp(16px, 2.4vw, 24px);
 }
 
 .mb-5 {
@@ -1274,5 +1332,72 @@ section {
   .list-with-icon.s3 li {
     border-right: none;
     padding-right: 0;
+  }
+  .card-borderd .counter-wrapper .counter {
+    width: 100px;
+    height: 100px;
+  }
+  .card-borderd .card-body .card-img-wrapper {
+    height: 110px;
+    margin-left: 100px;
+  }
+  .card-borderd .card-body .card-img-wrapper img {
+    width: 90px;
+    height: auto;
+    display: flex;
+    align-self: center;
+  }
+  .card-borderd .card-body .card-img-wrapper .reviews-icon {
+    display: flex;
+  }
+  .card-borderd .card-body .card-img-wrapper .reviews-icon img {
+    width: 20px;
+    height: 20px;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .secondary-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .secondary-btn img {
+    width: 18px;
+    height: 20px;
+  }
+  .form-step {
+    gap: 14px;
+    justify-content: center;
+  }
+  .form-step p .btn {
+    font-size: 14px;
+    padding: 14px 18px;
+    min-width: 180px;
+  }
+  .form-step .form-wrapper p {
+    padding: 12px 18px;
+    padding-left: 46px;
+  }
+  .form-step .form-wrapper input {
+    font-size: 14px;
+  }
+  .form-step .form-wrapper input::-moz-placeholder {
+    font-size: 14px;
+  }
+  .form-step .form-wrapper input::placeholder {
+    font-size: 14px;
+  }
+  .list-with-icon.s3 {
+    gap: 8px !important;
+  }
+  .list-with-icon.s3 li {
+    font-size: 14px;
+    padding-left: 18px;
+  }
+  .list-with-icon.s3 li::before {
+    width: 14px;
+    height: 13px;
   }
 }/*# sourceMappingURL=style.css.map */

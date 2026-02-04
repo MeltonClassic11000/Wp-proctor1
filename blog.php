@@ -1,610 +1,149 @@
 <?php
-/*
-Template Name: Blog
-*/
+/* Template Name: Blog Page */
+
+
+
 
 get_header();
 ?>
 
-<!-- Sections -->
 <div class="overflow-hidden">
+
+	<!-- HERO / BANNER (STATIC) -->
 	<section class="hero-sec">
 		<div class="container">
 			<div style="max-width: 611px;" class="content-wrapper mx-auto">
 				<ul
 					class="breadcrumbs d-flex justify-content-center align-items-center gap-2 flex-wrap text-center mb-4">
-					<li><a href="/" class="text-black">Home</a></li>
-					<li class="separator">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/breadcrumbs-angle-right-icon.svg"
-							width="6" height="10" alt="Icon">
-					</li>
+					<li><a href="<?php echo home_url(); ?>" class="text-black">Home</a></li>
+					<li class="separator">›</li>
 					<li class="text-primary fw-medium">Blog</li>
 				</ul>
-				<h1 class="text-center mb-0">Exams4U Blog</h1>
+				<h1 class="text-center mb-0"><?php the_title(); ?></h1>
 			</div>
 		</div>
 	</section>
+
+	<!-- FEATURED BLOG (LATEST POST) -->
 	<section class="featured-blog-sec">
 		<div class="container">
-			<div class="content-wrapper mb-5">
-				<h2 class="h3 text-center mb-4">Featured Blogs</h2>
-				<p class="mb-0 text-center">You should must read these blogs lorem Ipsum is simply dummy text.</p>
-			</div>
-			<div class="row g-3">
-				<div class="col-xl-7">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/feature-blog-sec-img1.webp"
-						style="max-width: 716px;" class="img-fluid d-block mx-auto border-12" width="716" height="495"
-						alt="Section Image" loading="lazy">
-				</div>
-				<div class="col-xl-5">
-					<div class="blog-card-wrapper">
-						<div class="blog-featured-card">
-							<div class="topbar mb-3">
-								<div class="featured-blog-btn">Blog Category</div>
-								<div class="d-flex align-items-center gap-1">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-										width="18" height="18" alt="Icon">
-									<div class="date poppins-medium">29 May, 2024</div>
-								</div>
-							</div>
-							<div class="featured-title">
-								Audit preparation: how to prepare for your first audit
-							</div>
-							<p class="mb-4">
-								All communication is end-to-end encrypted with complete confidentiality. We
-								specialize in helping students & professionals pass their online exams. Lorem
-								Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-								been the industry's standard dummy text ever since the 1500s when an unknown
-								printer.
-							</p>
-							<div class="bottom">
-								<a href="#" class="btn btn-primary">
-									Read More
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/arrow-right.webp"
-										style="object-fit: contain;" width="17" height="17" alt="Icon" loading="lazy">
-								</a>
-								<div class="d-flex align-items-center gap-2">
-									<div class="icon">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-											width="40" height="40" alt="Icon" loading="lazy">
+
+			<?php
+			$featured = new WP_Query([
+				'posts_per_page' => 1
+			]);
+			if ($featured->have_posts()):
+				while ($featured->have_posts()):
+					$featured->the_post();
+					?>
+
+					<div class="row g-3 mb-5">
+						<div class="col-xl-7">
+							<?php the_post_thumbnail('large', ['class' => 'img-fluid border-12']); ?>
+						</div>
+						<div class="col-xl-5">
+							<div class="blog-featured-card">
+								<div class="topbar mb-3">
+									<div class="featured-blog-btn">
+										<?php echo get_the_category()[0]->name ?? ''; ?>
 									</div>
-									<div class="poppins-semibold fs-18">Kevin Levin</div>
+									<div class="date"><?php echo get_the_date(); ?></div>
+								</div>
+
+								<div class="featured-title"><?php the_title(); ?></div>
+								<p><?php echo wp_trim_words(get_the_excerpt(), 35); ?></p>
+
+								<div class="bottom">
+									<a href="<?php the_permalink(); ?>" class="btn btn-primary">Read More</a>
+									<div><?php the_author(); ?></div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+
+				<?php endwhile;
+				wp_reset_postdata();
+			endif; ?>
+
+			<!-- TABS -->
 			<h2 class="h3 title">Featured Blogs</h2>
+
 			<div class="tabs-wrapper">
 				<div class="tabs-buttons">
-					<button class="tab-btn active" data-tab="tab1">All Category</button>
-					<button class="tab-btn" data-tab="tab2">Category One</button>
-					<button class="tab-btn" data-tab="tab3">Second Category</button>
-					<button class="tab-btn" data-tab="tab4">Third</button>
+					<button class="tab-btn active" data-cat="all">All</button>
+					<?php
+					$categories = get_categories();
+					foreach ($categories as $cat):
+						?>
+						<button class="tab-btn" data-cat="<?php echo $cat->slug; ?>">
+							<?php echo $cat->name; ?>
+						</button>
+					<?php endforeach; ?>
 				</div>
+
 				<div class="tabs-content">
-					<div class="tab-content active" id="tab1">
+					<div class="tab-content active" id="tab-all">
 						<div class="row g-3">
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
+							<?php
+							$tab_posts = new WP_Query(['posts_per_page' => 6]);
+							while ($tab_posts->have_posts()):
+								$tab_posts->the_post();
+								?>
+								<div class="col-lg-4 col-md-6">
+									<?php get_template_part('template-parts/blog-card'); ?>
 								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-content" id="tab2">
-						<div class="row g-3">
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-content" id="tab3">
-						<div class="row g-3">
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-content" id="tab4">
-						<div class="row g-3">
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="blog-card">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-										style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-										height="232" alt="Blog Image" loading="lazy">
-									<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-										Audit preparation: how to prepare for your first audit
-									</div>
-									<p class="mb-3">
-										The students in the Middle East often need help from the UAE essay writer
-										services.
-									</p>
-									<div class="blog-bottom">
-										<div class="d-flex align-items-center gap-2">
-											<div class="icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-													width="40" height="40" alt="Icon" loading="lazy">
-											</div>
-											<div class="poppins-medium fs-14">Kevin Levin</div>
-										</div>
-										<div class="d-flex align-items-center gap-1">
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-												width="18" height="18" alt="Icon">
-											<div class="date fs-14 poppins-medium">29 May, 2024</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							<?php endwhile;
+							wp_reset_postdata(); ?>
 						</div>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</section>
-	<section class="default-sec p-xl-0 p-0 pt-5 bg-cream">
-		<div class="container">
-			<div class="row g-5">
-				<div class="col-xl-7">
-					<div class="content-wrapper h-100 d-flex flex-column justify-content-center">
-						<div class="sub-title fw-bold text-primary fs-20 mb-3">Subscribe Our Newsletter</div>
-						<h2 class="s1 fw-bold mb-4">Smart Prep. Fast Updates.
-							Get Proctor Tips & Alerts</h2>
-						<div class="d-flex align-items-center flex-wrap gap-3 mb-5">
-							<div class="form-wrapper">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/hero-form-message.webp"
-									width="18" height="15" alt="icon">
-								<input type="email" placeholder="Enter Your Email...">
-							</div>
-							<a href="#" class="btn btn-primary fw-medium">
-								Subscribe Now
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/send-icon.svg"
-									style="object-fit: contain;" width="16" height="16" alt="Icon" loading="lazy">
-							</a>
-						</div>
-						<ul class="list-with-icon d-flex align-items-center gap-4 flex-wrap s3">
-							<li>Proctor Tips</li>
-							<li>Policy Changes</li>
-							<li>Slot Updates</li>
-							<li>Exam Alerts</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-xl-5">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/certificate-sec-img2.webp"
-						style="max-width: 517px;" class="img-fluid pt-2 d-block mx-auto" width="517" height="517"
-						alt="Section Image" loading="lazy">
-				</div>
-			</div>
-		</div>
+
+	<!-- STATIC SUBSCRIBE SECTION -->
+	<section class="default-sec bg-cream">
+		<?php get_template_part('template-parts/newsletter'); ?>
 	</section>
-	<section style="padding: 48px 0 clamp(64px,8.8vw,88px) 0;" class="blog-sec bg-cream-light">
+
+	<!-- BLOG GRID + PAGINATION -->
+	<section class="blog-sec bg-cream-light">
 		<div class="container">
+
 			<div class="row g-3 mb-5">
-				<div class="col-lg-4 col-md-6">
-					<div class="blog-card">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-							style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-							height="232" alt="Blog Image" loading="lazy">
-						<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-							Audit preparation: how to prepare for your first audit
-						</div>
-						<p class="mb-3">
-							The students in the Middle East often need help from the UAE essay writer
-							services.
-						</p>
-						<div class="blog-bottom">
-							<div class="d-flex align-items-center gap-2">
-								<div class="icon">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-										width="40" height="40" alt="Icon" loading="lazy">
-								</div>
-								<div class="poppins-medium fs-14">Kevin Levin</div>
-							</div>
-							<div class="d-flex align-items-center gap-1">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-									width="18" height="18" alt="Icon">
-								<div class="date fs-14 poppins-medium">29 May, 2024</div>
-							</div>
-						</div>
+				<?php
+				$paged = get_query_var('paged') ?: 1;
+				$blog = new WP_Query([
+					'posts_per_page' => 12,
+					'paged' => $paged
+				]);
+				while ($blog->have_posts()):
+					$blog->the_post();
+					?>
+					<div class="col-lg-4 col-md-6">
+						<?php get_template_part('template-parts/blog-card'); ?>
 					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="blog-card">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-							style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-							height="232" alt="Blog Image" loading="lazy">
-						<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-							Audit preparation: how to prepare for your first audit
-						</div>
-						<p class="mb-3">
-							The students in the Middle East often need help from the UAE essay writer
-							services.
-						</p>
-						<div class="blog-bottom">
-							<div class="d-flex align-items-center gap-2">
-								<div class="icon">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-										width="40" height="40" alt="Icon" loading="lazy">
-								</div>
-								<div class="poppins-medium fs-14">Kevin Levin</div>
-							</div>
-							<div class="d-flex align-items-center gap-1">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-									width="18" height="18" alt="Icon">
-								<div class="date fs-14 poppins-medium">29 May, 2024</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="blog-card">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-img1.webp"
-							style="border-radius: 12px 12px 0 0;" class="img-fluid d-block mb-3" width="380"
-							height="232" alt="Blog Image" loading="lazy">
-						<div class="blog-title fs-24 poppins-semibold mb-2 line-height-md">
-							Audit preparation: how to prepare for your first audit
-						</div>
-						<p class="mb-3">
-							The students in the Middle East often need help from the UAE essay writer
-							services.
-						</p>
-						<div class="blog-bottom">
-							<div class="d-flex align-items-center gap-2">
-								<div class="icon">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/kevin-img.webp"
-										width="40" height="40" alt="Icon" loading="lazy">
-								</div>
-								<div class="poppins-medium fs-14">Kevin Levin</div>
-							</div>
-							<div class="d-flex align-items-center gap-1">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/calendar-icon.svg"
-									width="18" height="18" alt="Icon">
-								<div class="date fs-14 poppins-medium">29 May, 2024</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php endwhile;
+				wp_reset_postdata(); ?>
 			</div>
+
 			<div class="pagination">
-				<div class="icon">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/pagination-left-arrow.svg"
-						width="19" height="15" alt="Arrow" loading="lazy">
-				</div>
-				<ul>
-					<li><a href="#" class="active">01</a></li>
-					<li><a href="#">02</a></li>
-					<li><a href="#">03</a></li>
-					<li><a href="#">04</a></li>
-					<li><a href="#">05</a></li>
-				</ul>
-				<div class="icon">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/pagination-right-arrow.svg"
-						width="19" height="15" alt="Arrow" loading="lazy">
-				</div>
+				<?php
+				echo paginate_links([
+					'total' => $blog->max_num_pages
+				]);
+				?>
 			</div>
+
 		</div>
 	</section>
-	<section style="margin-bottom: 80px;" class="default-sec p-xl-0 p-0 pt-5 bg-cream">
-		<div class="container">
-			<div class="row g-5">
-				<div class="col-xl-7 order-xl-2">
-					<div class="content-wrapper h-100 d-flex flex-column justify-content-center">
-						<div class="sub-title fw-bold text-primary fs-20 mb-3">Get Started Now!</div>
-						<h2>Professionals Who Know Every Platform & Rule</h2>
-						<p class="mb-5"><strong>Whether it’s CompTIA, AWS, Cisco, Microsoft, or ITIL, our exam
-								professionals know every testing platform and rule.</strong> Helping students and
-							professionals pass their OnVUE, Pearson, Prometric, Examity.</p>
-						<a href="#" class="btn btn-primary">Get Started Now!</a>
-					</div>
-				</div>
-				<div class="col-xl-5 order-xl-1">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/certificate-sec-img2.webp"
-						style="max-width: 517px;" class="img-fluid pt-2 d-block mx-auto" width="517" height="517"
-						alt="Section Image" loading="lazy">
-				</div>
-			</div>
-		</div>
+
+	<!-- LAST STATIC SECTION -->
+	<section class="default-sec bg-cream">
+		<?php get_template_part('template-parts/cta'); ?>
 	</section>
+
 </div>
 
-<?php
-get_footer();
+<?php get_footer(); ?>

@@ -1,15 +1,21 @@
 .hero-sec {
   background-color: #fff6ef;
   padding: 30px 0;
-  padding-bottom: 160px;
+  padding-bottom: 80px;
   position: relative;
 }
-.hero-sec .obj-wrapper {
+.hero-sec .hero-wrapper {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.hero-sec .hero-wrapper .obj-wrapper {
   position: absolute;
   right: 25px;
   width: 50%;
 }
-.hero-sec .obj-wrapper .buttons {
+.hero-sec .hero-wrapper .obj-wrapper .buttons {
   display: flex;
   align-items: end;
   flex-direction: column;
@@ -18,7 +24,7 @@
   top: 60px;
   right: 0;
 }
-.hero-sec .obj-wrapper .buttons .secondary-btn {
+.hero-sec .hero-wrapper .obj-wrapper .buttons .secondary-btn {
   border: none;
   background-color: white;
   padding: 6px;
@@ -26,7 +32,7 @@
   font-size: 15px;
   gap: 6px;
 }
-.hero-sec .obj-wrapper .card {
+.hero-sec .hero-wrapper .obj-wrapper .card {
   border-radius: 12px;
   padding: 12px;
   background-color: #ffffff;
@@ -39,14 +45,14 @@
   right: 0;
   bottom: 80px;
 }
-.hero-sec .content ul li {
+.hero-sec .hero-wrapper .content ul li {
   padding-left: 32px;
   font-weight: 400;
   font-family: "Inter", sans-serif;
   position: relative;
   margin-bottom: 16px;
 }
-.hero-sec .content ul li::before {
+.hero-sec .hero-wrapper .content ul li::before {
   content: "";
   position: absolute;
   background: url("./../img/icon/home-hero-check-icon1.webp") center/contain no-repeat;
@@ -57,10 +63,13 @@
 }
 
 @media (max-width: 1200px) {
-  .hero-sec .content-wrapper {
+  .hero-sec {
+    padding-bottom: 30px;
+  }
+  .hero-sec .hero-wrapper .content-wrapper {
     padding: 0;
   }
-  .hero-sec .obj-wrapper {
+  .hero-sec .hero-wrapper .obj-wrapper {
     width: 100%;
     position: static;
     margin-top: 24px;
@@ -69,13 +78,25 @@
     flex-direction: column;
     align-items: center;
   }
-  .hero-sec .obj-wrapper .buttons {
+  .hero-sec .hero-wrapper .obj-wrapper .buttons {
     position: static;
     align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
-  .hero-sec .obj-wrapper .card {
+  .hero-sec .hero-wrapper .obj-wrapper .buttons .secondary-btn {
+    width: 100%;
+  }
+  .hero-sec .hero-wrapper .obj-wrapper .card {
     position: static;
     height: -moz-fit-content;
     height: fit-content;
+  }
+}
+@media (max-width: 576px) {
+  .hero-sec .obj-wrapper .buttons .secondary-btn {
+    font-size: 12px;
+    font-weight: 500;
   }
 }/*# sourceMappingURL=home-hero.css.map */
