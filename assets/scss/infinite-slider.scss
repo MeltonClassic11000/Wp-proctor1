@@ -84,12 +84,22 @@
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 576px) {
     .infinite-slider-sec {
 
         .logo-slider.top-slider,
         .logo-slider.bottom-slider {
             animation-duration: 7s;
+
+            .slide {
+                .icon-wrapper{
+                    margin-bottom: 10px;
+                }
+                span {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            }
         }
     }
 }

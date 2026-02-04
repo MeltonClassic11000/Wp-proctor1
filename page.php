@@ -512,7 +512,7 @@ $theme_url = get_stylesheet_directory_uri();
 						<?php the_sub_field('main_title'); ?>
 					</h2>
 
-					<div class="row g-4">
+					<div class="row g-3">
 
 						<!-- LEFT COLUMN -->
 						<div class="col-lg-6">

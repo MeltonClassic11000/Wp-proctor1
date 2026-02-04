@@ -102,6 +102,9 @@ li {
   box-shadow: none;
   transition: all 0.3s ease;
 }
+.card-borderd.s2 .counter-wrapper .counter::after {
+  top: -1px;
+}
 .card-borderd.s2 .counter-wrapper .counter img {
   transition: all 0.3s ease;
 }
@@ -214,7 +217,7 @@ li {
   border-top: 1px solid rgb(224, 224, 224);
 }
 .card-borderd .card-body .content-wrapper {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgb(224, 224, 224);
   border-top: 0;
   border-radius: 18px 0px 18px 18px;
   padding: 17px;
@@ -228,6 +231,7 @@ li {
 }
 .card-borderd .card-body .content-wrapper .card-text {
   color: rgba(0, 0, 0, 0.5215686275);
+  margin-bottom: 0;
 }
 
 /* Tab */
@@ -1335,6 +1339,12 @@ section {
   .card-borderd .counter-wrapper .counter {
     width: 100px;
     height: 100px;
+  }
+  .card-borderd .counter-wrapper .counter .counter-title {
+    font-size: 18px;
+  }
+  .card-borderd .counter-wrapper .counter .count {
+    font-size: 34px;
   }
   .card-borderd .card-body .card-img-wrapper {
     height: 110px;

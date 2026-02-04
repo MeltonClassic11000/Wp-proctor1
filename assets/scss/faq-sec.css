@@ -6,6 +6,9 @@
   background-color: transparent;
   transition: all 0.3s ease;
 }
+.faq-sec .faq-wrapper .faq-item:last-child {
+  margin-bottom: 0;
+}
 .faq-sec .faq-wrapper .faq-item:hover, .faq-sec .faq-wrapper .faq-item.active {
   background-color: #ffffff;
   border-color: #191919;

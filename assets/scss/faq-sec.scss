@@ -8,6 +8,10 @@
             background-color: transparent;
             transition: all .3s ease;
 
+            &:last-child{
+                margin-bottom: 0;
+            }
+
             &:hover,
             &.active{
                 background-color: #ffffff;

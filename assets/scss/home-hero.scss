@@ -1,7 +1,7 @@
 .hero-sec {
     background-color: #fff6ef;
     padding: 30px 0;
-    padding-bottom: 80px;
+    padding-bottom: 104px;
     position: relative;
 
     // .content-wrapper {
@@ -12,6 +12,7 @@
         width: 100%;
         margin: 0 auto;
         position: relative;
+
         .obj-wrapper {
             position: absolute;
             right: 25px;
@@ -117,11 +118,13 @@
 
 @media (max-width: 576px) {
     .hero-sec {
-        .obj-wrapper {
-            .buttons {
-                .secondary-btn {
-                    font-size: 12px;
-                    font-weight: 500;
+        .hero-wrapper {
+            .obj-wrapper {
+                .buttons {
+                    .secondary-btn {
+                        font-size: 13px;
+                        font-weight: 500;
+                    }
                 }
             }
         }

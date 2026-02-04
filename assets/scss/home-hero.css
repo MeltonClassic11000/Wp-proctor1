@@ -1,7 +1,7 @@
 .hero-sec {
   background-color: #fff6ef;
   padding: 30px 0;
-  padding-bottom: 80px;
+  padding-bottom: 104px;
   position: relative;
 }
 .hero-sec .hero-wrapper {
@@ -95,8 +95,8 @@
   }
 }
 @media (max-width: 576px) {
-  .hero-sec .obj-wrapper .buttons .secondary-btn {
-    font-size: 12px;
+  .hero-sec .hero-wrapper .obj-wrapper .buttons .secondary-btn {
+    font-size: 13px;
     font-weight: 500;
   }
 }/*# sourceMappingURL=home-hero.css.map */
