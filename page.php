@@ -167,7 +167,7 @@ $theme_url = get_stylesheet_directory_uri();
 									<?php if ($logo): ?>
 										<div class="icon-wrapper mb-3">
 											<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>"
-												loading="lazy">
+												loading="lazy" width="40" height="40">
 										</div>
 									<?php endif; ?>
 									<span class="d-block text-center fw-exbold fs-22">
