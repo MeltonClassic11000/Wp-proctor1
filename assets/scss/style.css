@@ -682,7 +682,7 @@ section {
 }
 .form-step .form-wrapper {
   width: 100%;
-  background-color: red;
+  background-color: #ffffff;
   border-radius: 40px;
   border: 1px solid rgba(0, 0, 0, 0.1254901961);
   padding: 17px 20px;
