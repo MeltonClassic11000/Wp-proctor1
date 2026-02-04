@@ -1332,13 +1332,28 @@ section {
   }
 }
 @media (max-width: 576px) {
+  .list-with-icon.s3 {
+    justify-content: center;
+  }
   .list-with-icon.s3 li {
     border-right: none;
     padding-right: 0;
   }
+  .card-borderd.s2 .counter-wrapper .counter {
+    width: 60px;
+    height: 60px;
+  }
+  .card-borderd.s2 .counter-wrapper .counter img {
+    height: 45px;
+    width: 45px;
+  }
+  .card-borderd.s2 .card-body .card-img-wrapper {
+    margin-left: 60px;
+    height: 69px;
+  }
   .card-borderd .counter-wrapper .counter {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
   .card-borderd .counter-wrapper .counter .counter-title {
     font-size: 18px;
@@ -1347,11 +1362,11 @@ section {
     font-size: 34px;
   }
   .card-borderd .card-body .card-img-wrapper {
-    height: 110px;
-    margin-left: 100px;
+    height: 89px;
+    margin-left: 80px;
   }
   .card-borderd .card-body .card-img-wrapper img {
-    width: 90px;
+    width: 70px;
     height: auto;
     display: flex;
     align-self: center;
@@ -1362,6 +1377,9 @@ section {
   .card-borderd .card-body .card-img-wrapper .reviews-icon img {
     width: 20px;
     height: 20px;
+  }
+  .card-borderd .card-body .content-wrapper {
+    padding: 12px;
   }
   .btn {
     padding: 10px 20px;

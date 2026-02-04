@@ -44,11 +44,11 @@
     }
 
     .logo-slider.top-slider {
-        animation: scroll-left 15s linear infinite;
+        animation: scroll-left 30s linear infinite;
     }
 
     .logo-slider.bottom-slider {
-        animation: scroll-right 15s linear infinite;
+        animation: scroll-right 30s linear infinite;
     }
 
     @keyframes scroll-left {
@@ -89,7 +89,7 @@
 
         .logo-slider.top-slider,
         .logo-slider.bottom-slider {
-            animation-duration: 7s;
+            animation-duration: 10s;
 
             .slide {
                 .icon-wrapper{
