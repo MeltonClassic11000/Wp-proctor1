@@ -759,7 +759,6 @@ section {
     display: flex;
     gap: 8px;
     align-items: center;
-    flex-wrap: wrap;
 
     .form-wrapper.s1 {
         &::before {
@@ -782,7 +781,7 @@ section {
         padding: 17px 20px;
         justify-content: center;
         min-width: 200px;
-        width: 100%;
+        width: fit-content;
     }
 
     .form-wrapper {
@@ -1554,6 +1553,7 @@ section {
     .form-step {
         gap: 14px;
         justify-content: center;
+        flex-wrap: wrap;
 
         .btn {
             font-size: 14px;
