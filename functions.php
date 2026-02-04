@@ -106,3 +106,10 @@ add_filter('nav_menu_css_class', function ($classes, $item, $args) {
   }
   return $classes;
 }, 10, 3);
+
+
+add_filter('wpcf7_form_elements', function ($content) {
+  $content = preg_replace('/<span[^>]*>|<\/span>/', '', $content);
+  $content = preg_replace('/<p[^>]*>|<\/p>/', '', $content);
+  return $content;
+});

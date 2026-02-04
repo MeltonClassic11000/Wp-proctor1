@@ -762,65 +762,53 @@ section {
     flex-wrap: wrap;
 
     .form-wrapper.s1 {
-        p {
-            &::before {
-                background: url('./../img/icon/user-icon.webp') center /contain no-repeat !important;
-                height: 18px;
-            }
+        &::before {
+            background: url('./../img/icon/user-icon.webp') center /contain no-repeat !important;
+            height: 18px;
         }
     }
 
     .form-wrapper.s3 {
-        p {
-            &::before {
-                background: url('./../img/icon/phone-icon.webp') center /contain no-repeat !important;
-                height: 18px;
-            }
+        &::before {
+            background: url('./../img/icon/phone-icon.webp') center /contain no-repeat !important;
+            height: 18px;
         }
     }
 
-    p {
-        margin-bottom: 0;
-        position: relative;
-
-        .btn {
-            border: none !important;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 17px 20px;
-            justify-content: center;
-            min-width: 200px;
-            width: 100%;
-        }
+    .btn {
+        border: none !important;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 17px 20px;
+        justify-content: center;
+        min-width: 200px;
+        width: 100%;
     }
 
     .form-wrapper {
         width: 100%;
+        background-color: #ffffff;
+        border-radius: 40px;
+        border: 1px solid #00000020;
+        padding: 17px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 438px;
+        margin-bottom: 0;
+        position: relative;
+        padding-left: 46px;
 
-        p {
-            background-color: #ffffff;
-            border-radius: 40px;
-            border: 1px solid #00000020;
-            padding: 17px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            max-width: 438px;
-            margin-bottom: 0;
-            position: relative;
-            padding-left: 46px;
-
-            &::before {
-                content: '';
-                position: absolute;
-                left: 18px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 18px;
-                height: 15px;
-                background: url('./../img/icon/envelop-icon.webp') center /contain no-repeat;
-            }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 15px;
+            background: url('./../img/icon/envelop-icon.webp') center /contain no-repeat;
         }
 
         input {
@@ -828,6 +816,8 @@ section {
             outline: none;
             color: #515151;
             font-size: 17px;
+            width: 100%;
+            background-color: transparent;
             transition: all .3s ease;
 
             &::placeholder {
@@ -1560,36 +1550,33 @@ section {
     .form-step {
         gap: 14px;
         justify-content: center;
-        p {
-            .btn {
-                font-size: 14px;
-                padding: 14px 18px;
-                min-width: 180px;
-            }
+
+        .btn {
+            font-size: 14px;
+            padding: 14px 18px;
+            min-width: 180px;
         }
 
         .form-wrapper {
-            p {
-                padding: 12px 18px;
-                padding-left: 46px;
-            }
 
             input {
                 font-size: 14px;
-                &::placeholder{
+
+                &::placeholder {
                     font-size: 14px;
                 }
             }
         }
     }
 
-    .list-with-icon.s3{
+    .list-with-icon.s3 {
         gap: 8px !important;
-        li{
+
+        li {
             font-size: 14px;
             padding-left: 18px;
 
-            &::before{
+            &::before {
                 width: 14px;
                 height: 13px;
             }

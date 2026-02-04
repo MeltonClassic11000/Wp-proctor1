@@ -663,19 +663,15 @@ section {
   align-items: center;
   flex-wrap: wrap;
 }
-.form-step .form-wrapper.s1 p::before {
+.form-step .form-wrapper.s1::before {
   background: url("./../img/icon/user-icon.webp") center/contain no-repeat !important;
   height: 18px;
 }
-.form-step .form-wrapper.s3 p::before {
+.form-step .form-wrapper.s3::before {
   background: url("./../img/icon/phone-icon.webp") center/contain no-repeat !important;
   height: 18px;
 }
-.form-step p {
-  margin-bottom: 0;
-  position: relative;
-}
-.form-step p .btn {
+.form-step .btn {
   border: none !important;
   font-size: 16px;
   font-weight: 600;
@@ -686,8 +682,6 @@ section {
 }
 .form-step .form-wrapper {
   width: 100%;
-}
-.form-step .form-wrapper p {
   background-color: #ffffff;
   border-radius: 40px;
   border: 1px solid rgba(0, 0, 0, 0.1254901961);
@@ -701,7 +695,7 @@ section {
   position: relative;
   padding-left: 46px;
 }
-.form-step .form-wrapper p::before {
+.form-step .form-wrapper::before {
   content: "";
   position: absolute;
   left: 18px;
@@ -716,6 +710,8 @@ section {
   outline: none;
   color: #515151;
   font-size: 17px;
+  width: 100%;
+  background-color: transparent;
   transition: all 0.3s ease;
 }
 .form-step .form-wrapper input::-moz-placeholder {
@@ -1371,14 +1367,10 @@ section {
     gap: 14px;
     justify-content: center;
   }
-  .form-step p .btn {
+  .form-step .btn {
     font-size: 14px;
     padding: 14px 18px;
     min-width: 180px;
-  }
-  .form-step .form-wrapper p {
-    padding: 12px 18px;
-    padding-left: 46px;
   }
   .form-step .form-wrapper input {
     font-size: 14px;
