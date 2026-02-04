@@ -695,6 +695,9 @@ section {
   position: relative;
   padding-left: 46px;
 }
+.form-step .form-wrapper p {
+  margin-bottom: 0;
+}
 .form-step .form-wrapper::before {
   content: "";
   position: absolute;
