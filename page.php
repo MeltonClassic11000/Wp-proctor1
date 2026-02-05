@@ -398,7 +398,7 @@ $theme_url = get_stylesheet_directory_uri();
 										<?php if ($image): ?>
 											<img src="<?php echo esc_url($image['url']); ?>"
 												alt="<?php echo esc_attr($image['alt']); ?>"
-												class="border-12 object-cover w-100 h-100 d-block mx-auto" loading="lazy">
+												class="border-12 object-cover w-100 h-100 d-block mx-auto" width="549" height="579" loading="lazy">
 										<?php endif; ?>
 
 										<div class="content-wrapper">
@@ -451,7 +451,7 @@ $theme_url = get_stylesheet_directory_uri();
 										<?php if ($section_image): ?>
 											<img src="<?php echo esc_url($section_image['url']); ?>"
 												alt="<?php echo esc_attr($section_image['alt']); ?>"
-												class="border-12 object-cover w-100 h-100" loading="lazy">
+												class="border-12 object-cover w-100 h-100" width="549" height="579" loading="lazy">
 										<?php endif; ?>
 
 										<div class="custom-buttons">
